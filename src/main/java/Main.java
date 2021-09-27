@@ -3,13 +3,14 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        test1();
-        hello();
-        test();
-    }
-    public static void test1() {
-        int [] numbers = new int[5];
         Scanner input = new Scanner(System.in);
+        hello(input);
+        test1(input);
+        test(input);
+        input.close();
+    }
+    public static void test1(Scanner input) {
+        int [] numbers = new int[5];
         ArrayList<Integer> arrayList = new ArrayList<>();
         try{
             for (int i=0;i<numbers.length;i++){
@@ -23,8 +24,7 @@ public class Main {
         }
     }
 
-    public static void hello() {
-        Scanner input = new Scanner(System.in);
+    public static void hello(Scanner input) {
         System.out.print("Введите число больше 7:");
         try {
             int number = input.nextInt();
@@ -33,8 +33,7 @@ public class Main {
             System.out.println("Значение некорректное");
         }
     }
-    public static void test() {
-        Scanner input = new Scanner(System.in);
+    public static void test(Scanner input) {
         System.out.print("Введите имя:");
         try {
             String name = input.next();
@@ -44,7 +43,7 @@ public class Main {
 
         } catch (Exception e) {
             System.out.println("Значение некорректное");
-        } 
+        }
     }
 }
 
